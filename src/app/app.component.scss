@@ -1,0 +1,27 @@
+@import "../styles.scss";
+.colorFondo {
+    background: rgb(220, 220, 222);
+    background: radial-gradient(circle, rgba(220, 220, 222, 1) 0%, rgba(198, 0, 40, 1) 100%);
+}
+.contenido {
+    background: $secundary;
+    width: 99%;
+    height: 98%;
+    animation-name: contenido;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    border-radius: 20px;
+}
+
+.image {
+    margin: 1%;
+    width: 6em;
+}
+.nombreColegio {
+    font-size: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0em 0.2em;
+    color: $primary;
+}

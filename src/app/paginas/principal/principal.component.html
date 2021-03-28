@@ -1,0 +1,51 @@
+<div class="contenedorStepper flexCenter">
+    <mat-vertical-stepper linear #stepper class="stepper">
+        <mat-step [stepControl]="firstFormGroup" [editable]="false">
+            <ng-template matStepLabel>Profesores</ng-template>
+            <form [formGroup]="firstFormGroup" fxLayout="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Seleccione un profesor :</mat-label>
+                    <mat-select formControlName="firstCtrl" (selectionChange)="obtenerAsignaturas($event['value'])"
+                        required>
+                        <mat-option [value]="profesor.idProfesor" *ngFor="let profesor of profesores">
+                            {{profesor.nombre}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </form>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <button mat-button matStepperNext>Siguiente</button>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="SecondFormGroup" [editable]="false">
+            <ng-template matStepLabel>Asignaturas</ng-template>
+            <form [formGroup]="SecondFormGroup" fxLayout="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Seleccione una Asignatura :</mat-label>
+                    <mat-select formControlName="secondCtrl" (selectionChange)="obtenerEstudiantes($event['value'])">
+                        <mat-option [value]="asignatura.idAsignatura" *ngFor="let asignatura of asignaturas">
+                            {{asignatura.nombre}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </form>
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5%">
+                <button mat-button (click)="stepper.reset()">Atras</button>
+                <button mat-button matStepperNext>Siguiente</button>
+            </div>
+        </mat-step>
+        <mat-step [editable]="false">
+            <ng-template matStepLabel>Estudiantes</ng-template>
+            <div class="contenidoEstudiantes">
+                <mat-list class="lista">
+                    <mat-list-item class="titulo">Estudiantes </mat-list-item>
+                    <mat-list-item class="celda" *ngFor="let estudiante of estudiantes">{{estudiante.nombre}}
+                        <mat-divider></mat-divider>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <button mat-button (click)="stepper.reset()">Reiniciar</button>
+            </div>
+
+        </mat-step>
+    </mat-vertical-stepper>
+</div>

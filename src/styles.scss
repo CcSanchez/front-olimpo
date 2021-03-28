@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+$primary: #c60028;
+$secundary: white;
+
+//https://www.runt.com.co/sites/all/themes/runt/logo.png
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.full {
+    width: 100%;
+    height: 100%;
+}
+
+.flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.contenedorStepper {
+    .mat-step-header .mat-step-icon-selected,
+    .mat-step-icon-state-edit {
+        background: $primary !important;
+    }
+    .mat-step-icon-state-done {
+        background: green !important;
+    }
+    .mat-step-header:hover {
+        background: #ff000066;
+    }
+    .mat-vertical-stepper-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mat-vertical-content {
+        padding: 0 24px 24px 24px;
+        width: 45%;
+    }
+
+    .mat-form-field {
+        width: 100%;
+    }
+}
+.success-class {
+    background-color: green;
+    color: white;
+}
+.error-class {
+    background-color: green;
+    color: white;
+}
+
+.mat-list-base .mat-list-item .mat-list-item-content {
+    width: 100%;
+    justify-content: center;
+}
